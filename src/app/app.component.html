@@ -1,0 +1,81 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <aside class="col-sm-12">
+      <div class="card m-3">
+        <div class="card-header text-center bg-dark text-white">
+            <div class="row align-items-center">
+              <div class="col-md-11">
+                    <span class="text-center">Angular + Moment.js Timezone POC</span>
+                </div>
+                <div class="col-md-1">
+                  <a href="https://github.com/patelvaibhavd/angular-moment-timezone-poc" target="_blank"><img
+                    src="/assets/images/github-mark-white.png" alt="GITHUB" width="18" height="18"></a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body bg-main-card">
+          <div class="row mb-3 text-center">
+            <div class="col-sm-12">
+              <strong>This POC demonstrates the usage of "moment.js + moment-timezone.js" library along
+                with Angular.</strong>
+            </div>
+          </div>
+          <ul>
+            <li>When any dates in your application must be shown according to the user's specified timezones rather than the user's system timezone.</li>
+            <li>Assume your user is from "Brisbane, Australia," and his or her system's default timezone is "(UTC + 10:00) Brisbane." Let's pretend he or she uses your app, but for whatever reason, he or she wishes to view any dates presented in your app in the "(UTC + 12:00) Auckland, Wellington" timezone.</li>
+            <li>In this scenario, you may use this poc to learn how to display dates based on the user's timezone selection.</li>
+          </ul>          
+          <div class="row mb-3">
+            <div class="col-sm-12">
+              <label for="Timezone">Timezone</label>
+              <ng-select placeholder="Search Timezone" labelForId="Timezone" [(ngModel)]="selectedTimeZone" (change)="onSelectTimeZone($event)">
+                <ng-option *ngFor="let tz of timezone" [value]="tz">{{tz.text}}</ng-option>
+             </ng-select>
+            </div>
+          </div>
+          <div class="row mb-3" *ngIf="selectedTimeZone && selectedTimeZone.text">
+            <div class="col-xl-4 col-md-6 py-2" [@fadeInOnEnter] [@fadeOutOnLeave]>
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  moment.js UTC local timezone UTC
+                </div>
+                <div class="card-body bg-card-box text-center text-white">
+                  <h3>{{timeZoneUtcDateTime}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 py-2" [@fadeInOnEnter] [@fadeOutOnLeave]>
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  Your Local Time with respect to above UTC time
+                </div>
+                <div class="card-body bg-card-box text-center text-white">
+                  <h3>{{localTimeZoneDateTime}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 py-2" [@fadeInOnEnter] [@fadeOutOnLeave]>
+              <div class="card h-100">
+                <div class="card-header text-center">
+                  {{selectedTimeZone?.text}}
+                </div>
+                <div class="card-body bg-card-box text-center text-white">
+                  <h3>{{selectedTimeZoneDateTime}}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center bg-dark text-white">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+                  <span class="text-center">
+                    2023 - Vaibhav Patel - <a href="mailto:patelvaibhav27@gmail.com">patelvaibhav27@gmail.com</a> - <a href="https://github.com/patelvaibhavd" target="_blank">Github</a>
+                  </span>
+              </div>
+          </div>
+      </div>
+      </div>
+    </aside>
+  </div>
+</div>

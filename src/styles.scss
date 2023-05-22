@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+body,html{
+    height:100%;
+}
+
+.bg-card-box {
+    background-color: #006BA9 !important;
+}
+
+.bg-main-card {
+    background-color: #d3d9dd !important;
+}
